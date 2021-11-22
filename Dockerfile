@@ -11,9 +11,10 @@ CMD /usr/local/tomcat/bin/catalina.sh run
 
 RUN apt install maven -y
 RUN apt install git -y
+WORKDIR /tmp/
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
-WORKDIR /usr/local/tomcat/boxfuse-sample-java-war-hello/
-RUN ls -la
+WORKDIR /tmp/boxfuse-sample-java-war-hello/
+RUN ls -l
 RUN mvn package
 RUN cp target/hello-1.0.war /usr/local/tomcat/webapps
 
