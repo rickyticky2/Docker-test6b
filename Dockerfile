@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
 RUN apt update
+RUN sudo apt install default–jdk -y
 RUN groupadd tomcat
 RUN useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
 RUN curl -O https://apache-mirror.rbc.ru/pub/apache/tomcat/tomcat-9/v9.0.37/bin/apache-tomcat-9.0.37.tar.gz
