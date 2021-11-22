@@ -10,6 +10,7 @@ EXPOSE 8080
 CMD /usr/local/tomcat/bin/catalina.sh run
 
 RUN apt install maven -y
+RUN apt install git -y
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
 WORKDIR /usr/local/tomcat/boxfuse-sample-java-war-hello/
 RUN ls -la
