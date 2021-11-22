@@ -13,7 +13,7 @@ RUN chmod g+x conf
 RUN chown -R tomcat webapps/ work/ temp/ logs/
 RUN update-java-alternatives -l
 RUN touch /etc/systemd/system/tomcat.service
-RUN echo '[Unit]
+RUN echo "[Unit]
 Description=Apache Tomcat Web Application Container
 After=network.target
 
@@ -38,7 +38,7 @@ Restart=always
 
 [Install]
 
-WantedBy=multi-user.target' > /etc/systemd/system/tomcat.service
+WantedBy=multi-user.target" > /etc/systemd/system/tomcat.service
 
 RUN cat /etc/systemd/system/tomcat.service
 RUN systemctl daemon-reload
